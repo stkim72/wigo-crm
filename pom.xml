@@ -14,7 +14,7 @@
 	<version>1.0.0-SNAPSHOT</version>
 	<name>wigo-crm-base</name>
 	<description>wigo-crm-base Project</description>
-
+	<packaging>pom</packaging>
 	<properties>
 		<java.version>1.8</java.version>
 		<mybatis.version>3.5.1</mybatis.version>
@@ -237,7 +237,22 @@
 
 	</dependencies>
 
+	<build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <excludes>
+                        <exclude>
+                            <groupId>org.projectlombok</groupId>
+                            <artifactId>lombok</artifactId>
+                        </exclude>
+                    </excludes>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 
 
-	<packaging>pom</packaging>
 </project>
